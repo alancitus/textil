@@ -1,0 +1,54 @@
+{% extends "partials/layout.twig" %}
+{% block content %}
+    <h1 class="page-header">Inicio</h1>
+    <p class="well">
+                Bienvenido a la página principal de <b>Sistema Textil
+                </b>,software de gestión.
+    </p>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Mantenimiento</div>
+                <table class="table table-stripped">
+                    <tbody>
+                        <tr>
+                            <td><i class="fa fa-archive"></i> Productos</td>     
+                            <td class="text-right">{{ model.productos|number_format(0) }}</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-user"></i> Clientes</td>
+                            <td class="text-right">{{ model.clientes|number_format(0) }}</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-user"></i> Usuarios</td>
+                            <td class="text-right">{{ model.usuarios|number_format(0) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Ventas</div>
+                <table class="table table-stripped">
+                    <tbody>
+                        <tr>
+                            <td><i class="fa fa-file-text-o"></i> Comprobantes</td>
+                            <td class="text-right">{{ model.comprobantes|number_format(0) }}</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-money"></i> Utilidad del Mes</td>
+                            <td class="text-right">USD {{ model.utilidad_mensual|number_format(2) }}</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-money"></i> Utilidad Total</td>
+                            <td class="text-right">USD {{ model.utilidad_total|number_format(2) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+ 
+{% endblock %}
